@@ -1,8 +1,8 @@
-import 'package:boxgame/PopPushGame.dart';
-import 'package:flame/game.dart';
+import 'package:boxgame/HardcoreCollisionGame.dart';
 import 'package:flutter/material.dart';
+import 'package:flame/game.dart';
 
 void main() {
-  final myGame = PopPushGame();
-  runApp(GameWidget(game: myGame));
+    final game = HardcoreCollisionGame();
+    runApp(GameWidget(game: game));
 }
