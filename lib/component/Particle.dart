@@ -39,8 +39,6 @@ class Particle extends PositionComponent with Hitbox, Collidable {
       Vector2 thisVelocity = velocity;
       Vector2 otherVelocity = other.velocity;
 
-      print(thisVelocity.toString() +  " + " + otherVelocity.toString());
-
       thisVelocity.negate();
       otherVelocity.negate();
 

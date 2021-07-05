@@ -10,7 +10,7 @@ class HardcoreCollisionGame extends BaseGame with HasCollidables {
   @override
   Future<void> onLoad() async {
     add(ScreenCollidable());
-    for (int i = 0; i < 100; ++i) {
+    for (int i = 0; i < 500; ++i) {
       var pos = Vector2.array([doubleInRange(randUtil, 0, size.x), doubleInRange(randUtil, 0, size.y)]);
       add(Particle(pos));
     }
