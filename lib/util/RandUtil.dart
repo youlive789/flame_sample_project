@@ -1,6 +1,6 @@
 import 'dart:math';
 
-final randUtil = Random();
+final rand = Random();
 
-double doubleInRange(Random source, num start, num end) => 
+double doubleInRange(Random source, num start, num end) =>
     source.nextDouble() * (end - start) + start;
