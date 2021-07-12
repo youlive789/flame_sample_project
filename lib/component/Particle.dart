@@ -1,5 +1,5 @@
-import 'package:boxgame/physics/SimpleCollidable.dart';
-import 'package:boxgame/util/RandUtil.dart';
+import 'package:flame_sample_project/physics/SimpleCollidable.dart';
+import 'package:flame_sample_project/util/RandUtil.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 

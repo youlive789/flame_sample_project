@@ -1,6 +1,6 @@
 {
-    "name": "boxgame",
-    "short_name": "boxgame",
+    "name": "flame_sample_project",
+    "short_name": "flame_sample_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

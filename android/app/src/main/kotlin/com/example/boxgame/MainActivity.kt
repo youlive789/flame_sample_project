@@ -1,4 +1,4 @@
-package com.example.boxgame
+package com.example.flame_sample_project
 
 import io.flutter.embedding.android.FlutterActivity
 

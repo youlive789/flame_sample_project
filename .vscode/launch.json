@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "boxgame",
+            "name": "flame_sample_project",
             "request": "launch",
             "type": "dart",
             "args": [
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "name": "boxgame (profile mode)",
+            "name": "flame_sample_project (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",

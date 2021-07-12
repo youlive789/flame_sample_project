@@ -1,4 +1,4 @@
-import 'package:boxgame/physics/SimpleCollidable.dart';
+import 'package:flame_sample_project/physics/SimpleCollidable.dart';
 import 'package:flame/game.dart';
 
 mixin HasSimplePhysics on BaseGame {

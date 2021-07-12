@@ -1,4 +1,4 @@
-import 'package:boxgame/HardcoreCollisionGame.dart';
+import 'package:flame_sample_project/HardcoreCollisionGame.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 
