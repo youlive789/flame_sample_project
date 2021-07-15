@@ -1,6 +1,8 @@
-import 'package:flame_sample_project/HardcoreCollisionGame.dart';
+import 'package:flame_sample_project/game/HardcoreCollisionGame.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
+
+import 'game/PopPushGame.dart';
 
 void main() {
   // 엣지 테스트
@@ -9,9 +11,9 @@ void main() {
   // 폰 성능 테스트
   // flutter run --observatory-port=9200 --profile
 
-  final game = HardcoreCollisionGame();
-  runApp(GameWidget(game: game));
-
-  // final game = PopPushGame();
+  // final game = HardcoreCollisionGame();
   // runApp(GameWidget(game: game));
+
+  final game = PopPushGame();
+  runApp(GameWidget(game: game));
 }

@@ -7,7 +7,7 @@ class Particle extends SpriteComponent with SimpleCollidable {
   late Vector2 velocity;
 
   Particle(Vector2 position, Sprite sprite)
-      : super(position: position, size: Vector2.all(15.0), sprite: sprite) {
+      : super(position: position, size: Vector2.all(8.0), sprite: sprite) {
     velocity = Vector2.array(
         [doubleInRange(rand, -100, 100), doubleInRange(rand, -100, 100)]);
   }
