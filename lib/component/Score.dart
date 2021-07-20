@@ -1,12 +1,12 @@
 class Score {
-  int point = 0;
-  final popPushGameScorePrefix = "score : ";
+  int _point = 0;
+  final _popPushGameScorePrefix = "score : ";
 
   String getScoreText() {
-    return popPushGameScorePrefix + point.toString();
+    return _popPushGameScorePrefix + _point.toString();
   }
 
   void addPoint() {
-    point++;
+    _point++;
   }
 }

@@ -4,7 +4,7 @@ import 'package:flame_sample_project/game/PopPushGame.dart';
 import 'package:flame_sample_project/util/RandUtil.dart';
 
 class PopTarget extends SpriteComponent with HasGameRef<PopPushGame>, Tapable {
-  double _timeLimit = 3.0;
+  double _timeLimit = 2.0;
   late Sprite _popTargetSprite;
 
   PopTarget(Vector2 position, Sprite sprite, Vector2 size)
@@ -16,19 +16,34 @@ class PopTarget extends SpriteComponent with HasGameRef<PopPushGame>, Tapable {
   void update(double dt) {
     super.update(dt);
     if (_timeLimit <= 0) {
-      this.remove();
-      this.gameRef.add(_getRandomPopTarget());
+      _deletePopTargetFromGame();
+      _addPopTargetToGame();
     } else {
       _timeLimit -= dt;
+    }
+
+    if (_haveToGeneratePopTarget(
+        this.gameRef.popTargetCount, this.gameRef.popTargetCountLimit)) {
+      _addPopTargetToGame();
     }
   }
 
   @override
   bool onTapDown(TapDownInfo event) {
     this.shouldRemove = true;
-    this.gameRef.add(_getRandomPopTarget());
+    _addPopTargetToGame();
     this.gameRef.updateScore();
     return true;
+  }
+
+  void _addPopTargetToGame() {
+    this.gameRef.add(_getRandomPopTarget());
+    this.gameRef.popTargetCount++;
+  }
+
+  void _deletePopTargetFromGame() {
+    this.gameRef.popTargetCount--;
+    this.remove();
   }
 
   PopTarget _getRandomPopTarget() {
@@ -37,5 +52,12 @@ class PopTarget extends SpriteComponent with HasGameRef<PopPushGame>, Tapable {
       doubleInRange(rand, 100, this.gameRef.size.y - 100)
     ]);
     return PopTarget(randomPosition, _popTargetSprite, size);
+  }
+
+  bool _haveToGeneratePopTarget(int popTargetCount, int popTargetLimit) {
+    if (rand.nextInt(200) == 0 && popTargetCount < popTargetLimit) {
+      return true;
+    }
+    return false;
   }
 }

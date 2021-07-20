@@ -6,6 +6,9 @@ import 'package:flame_sample_project/component/ScoreText.dart';
 import 'package:flame_sample_project/util/TextPaint.dart';
 
 class PopPushGame extends BaseGame with HasTapableComponents {
+  int popTargetCount = 0;
+  int popTargetCountLimit = 10;
+
   late Score score;
   late ScoreText scoreText;
 
@@ -17,8 +20,8 @@ class PopPushGame extends BaseGame with HasTapableComponents {
 
     // 팝푸시 자원 초기화
     final circleImg = await loadSprite("circle.png");
-    Vector2 pos = Vector2.array([size.x / 2, size.y / 2]);
     Vector2 popTargetSize = Vector2.all(100);
+    Vector2 pos = Vector2.array([size.x / 2, size.y / 2]);
 
     // 게임객체에 자원 추가
     add(scoreText
@@ -26,6 +29,7 @@ class PopPushGame extends BaseGame with HasTapableComponents {
       ..x = size.x / 2
       ..y = 32.0);
     add(PopTarget(pos, circleImg, popTargetSize));
+    popTargetCount++;
   }
 
   void updateScore() {
