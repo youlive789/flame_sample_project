@@ -1,5 +1,6 @@
 import 'package:flame/widgets.dart';
 import 'package:flame_sample_project/game/HardcoreCollisionGame.dart';
+import 'package:flame_sample_project/widget/MainScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 
@@ -19,6 +20,7 @@ void main() {
   // https://flutter-ko.dev/docs/cookbook/navigation/navigation-basics
   // https://jap.alekhin.io/setup-widget-tree-flame-flutter-game
 
-  final game = PopPushGame();
-  runApp(GameWidget(game: game));
+  // final game = PopPushGame();
+  // runApp(GameWidget(game: game));
+  runApp(MaterialApp(title: 'PoppushGame', home: MainScreen()));
 }
